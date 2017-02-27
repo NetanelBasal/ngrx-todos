@@ -1,3 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+<!--<app-todos-filters [filters]="filters"-->
+<!--[active]="activeFilter | async"-->
+<!--(changeFilter)="changeFilter($event)">-->
+<!--</app-todos-filters>-->
+
+<app-todos [todos]="todos | async"
+           (toggle)="toggle($event)"></app-todos>
+
+<add-todo (add)="addTodo($event)" [reset]="addTodoSuccess$ | async"></add-todo>
+
+<!--<input type="text" #todo>-->
+<!--<button (click)="addTodo(todo.value)">Add</button>-->
