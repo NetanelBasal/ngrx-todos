@@ -14,7 +14,7 @@ export class TodosEffects {
 
   @Effect() getTodos$ = this.actions$
     .ofType(GET_TODOS)
-    .switchMap(payload =>
+    .switchMap(action =>
       this.todosService.getTodos()
            .map(todos => ({type: GET_TODOS_SUCCESS, payload: todos}))
             .catch(() => Observable.of({type: GET_TODOS_ERROR})));
